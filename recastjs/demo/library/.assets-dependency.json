@@ -1,0 +1,76 @@
+{
+  "uuid": {
+    "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\resources\\commonLevel\\material\\material.mtl": [
+      "1baf0fc9-befa-459c-8bdd-af1a450a0319"
+    ],
+    "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\script\\recastdetourjs\\debugMaterial.mtl": [
+      "bb1d0e97-8b3a-4837-87a9-0fde5a2d1633"
+    ]
+  },
+  "path": {
+    "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\script\\recastdetourjs\\debugEffect.effect": [
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\unlit-vs.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\input.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\decode.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\decode-base.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\common.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\morph.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-skinning.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\skinning-lbs.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-global.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-local-batch.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-local.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-fog.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\unlit-fs.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\output.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\gamma.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\unlit-vs.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\input.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\decode.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\decode-base.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\common.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\morph.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-skinning.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\skinning-lbs.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-global.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-local-batch.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-local.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-fog.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\unlit-fs.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\output.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\gamma.chunk"
+    ],
+    "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\script\\recastdetourjs\\tool\\builtin-unlit.effect": [
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\unlit-vs.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\input.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\decode.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\decode-base.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\common.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\morph.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-skinning.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\skinning-lbs.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-global.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-local-batch.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-local.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\cc-fog.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\unlit-fs.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\output.chunk",
+      "D:\\cocos\\myEngine3.0\\editor\\assets\\chunks\\gamma.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\unlit-vs.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\input.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\decode.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\decode-base.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\common.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\morph.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-skinning.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\skinning-lbs.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-global.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-local-batch.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-local.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\cc-fog.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\unlit-fs.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\output.chunk",
+      "D:\\BabylonJsExtensions\\recastjs\\demo\\assets\\chunks\\gamma.chunk"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "__version__": "1.2.6",
+  "version": {
+    "builder": "1.2.3"
+  },
+  "BuildTaskManager": {
+    "taskMap": {
+      "1617174742719": {
+        "id": "1617174742719",
+        "progress": 1,
+        "state": "success",
+        "message": "Build success in 60093 ms!",
+        "options": {
+          "name": "demo",
+          "platform": "web-mobile",
+          "buildPath": "./build",
+          "debug": false,
+          "md5Cache": false,
+          "sourceMaps": false,
+          "replaceSplashScreen": false,
+          "mainBundleCompressionType": "merge_dep",
+          "mainBundleIsRemote": false,
+          "mergeStartScene": false,
+          "experimentalEraseModules": false,
+          "compressTexture": true,
+          "packAutoAtlas": true,
+          "startScene": "7aa3f257-ecfb-402a-912e-9e262a654104",
+          "scenes": [
+            {
+              "url": "db://assets/scene.scene",
+              "uuid": "7aa3f257-ecfb-402a-912e-9e262a654104"
+            }
+          ],
+          "outputName": "web-mobile-001",
+          "packages": {
+            "cocos-service": {},
+            "web-mobile": {
+              "orientation": "auto",
+              "polyfills": {
+                "asyncFunctions": true
+              }
+            }
+          }
+        },
+        "time": "2021-3-31 15:12",
+        "dirty": false
+      }
+    }
+  },
+  "common": {
+    "outputName": "web-mobile-001",
+    "mainBundleCompressionType": "merge_dep",
+    "platform": "web-mobile"
+  }
+}
