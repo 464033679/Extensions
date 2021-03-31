@@ -11,5 +11,8 @@
   "bugs": {
     "url": "https://github.com/BabylonJS"
   },
-  "homepage": "https://github.com/BabylonJS"
+  "homepage": "https://github.com/BabylonJS",
+  "dependencies": {
+    "glue": "^6.0.0"
+  }
 }

@@ -29,11 +29,12 @@ def build():
     EMSCRIPTEN_ROOT = os.path.dirname(emcc)
 
   if not EMSCRIPTEN_ROOT:
-    print "ERROR: EMSCRIPTEN_ROOT environment variable (which should be equal to emscripten's root dir) not found"
+    print("ERROR: EMSCRIPTEN_ROOT environment variable (which should be equal to emscripten's root dir) not found")
     sys.exit(1)
 
   sys.path.append(EMSCRIPTEN_ROOT)
   import tools.shared as emscripten
+  import tools.building as building
 
   wasm = 'wasm' in sys.argv
   closure = 'closure' in sys.argv
@@ -58,9 +59,9 @@ def build():
   target = 'recast.js' if not wasm else 'recast.wasm.js'
 
   print
-  print '--------------------------------------------------'
-  print 'Building recast.js, build type:', emcc_args
-  print '--------------------------------------------------'
+  print('--------------------------------------------------')
+  print('Building recast.js, build type:', emcc_args)
+  print('--------------------------------------------------')
   print
 
   # Utilities
@@ -70,9 +71,9 @@ def build():
     stage_counter += 1
     text = 'Stage %d: %s' % (stage_counter, text)
     print
-    print '=' * len(text)
-    print text
-    print '=' * len(text)
+    print('=' * len(text))
+    print(text)
+    print('=' * len(text))
     print
 
   # Main
@@ -94,32 +95,31 @@ def build():
     args = ['-I../recastnavigation/Detour/Include']
     for include in INCLUDES:
       args += ['-include', include]
-
-    emscripten.Building.emcc('glue.cpp', args, 'glue.bc')
+    building.emcc('glue.cpp', args, 'glue.bc')
     assert(os.path.exists('glue.bc'))
 
     if not os.path.exists('CMakeCache.txt'):
       stage('Configure via CMake')
-      emscripten.Building.configure([emscripten.PYTHON, os.path.join(EMSCRIPTEN_ROOT, 'emcmake'), 'cmake', '..', '-DCMAKE_BUILD_TYPE=Release'])
+      building.configure([emscripten.PYTHON, os.path.join(EMSCRIPTEN_ROOT, 'emcmake'), 'cmake', '..', '-DCMAKE_BUILD_TYPE=Release'])
 
     stage('Make')
 
     CORES = multiprocessing.cpu_count()
 
     if emscripten.WINDOWS:
-      emscripten.Building.make(['mingw32-make', '-j', str(CORES)])
+      building.make(['mingw32-make', '-j', str(CORES)])
     else:
-      emscripten.Building.make(['make', '-j', str(CORES)])
-      
+      building.make(['make', '-j', str(CORES)])
+
     stage('Link')
 
-    emscripten.Building.emcc('-DNOTHING_WAKA_WAKA',['glue.bc'] + ['librecastjs.a'], 'recastjs.bc')
+    building.emcc('-DNOTHING_WAKA_WAKA',['glue.bc'] + ['librecastjs.a'], 'recastjs.bc')
     assert os.path.exists('recastjs.bc')
 
     stage('emcc: ' + ' '.join(emcc_args))
 
     temp = os.path.join('..', 'build', target)
-    emscripten.Building.emcc('recastjs.bc', emcc_args + ['--js-transform', 'python %s' % os.path.join('..', 'bundle.py')],
+    building.emcc('recastjs.bc', emcc_args + ['--js-transform', 'python %s' % os.path.join('..', 'bundle.py')],
                             temp)
 
     assert os.path.exists(temp), 'Failed to create script code'

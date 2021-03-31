@@ -259,7 +259,7 @@ int NavMesh::rasterizeTileLayers(const int tx, const int ty,
     return n;
 }
 
-bool NavMesh::computeTiledNavMesh(const std::vector<float>& verts, const std::vector<int>& tris, rcConfig& cfg, NavMeshintermediates& intermediates, const std::vector<unsigned char>& triareas)
+bool NavMesh::computeTiledNavMesh(const std::vector<float>& verts, const std::vector<int>& tris, rcConfig& cfg, NavMeshintermediates& intermediates, const std::vector<unsigned char>& triareas, const OffMeshLinkConfig& offMeshConfig)
 {
     dtStatus status;
 
@@ -369,7 +369,8 @@ bool NavMesh::computeTiledNavMesh(const std::vector<float>& verts, const std::ve
     return true;
 }
 
-void NavMesh::build(const float* positions, const int positionCount, const int* indices, const int indexCount, const rcConfig& config)
+
+void NavMesh::build(const float* positions, const int positionCount, const int* indices, const int indexCount, const rcConfig& config, const OffMeshLinkConfig& offMeshConfig)
 {
     if (m_pmesh)
     {
@@ -462,7 +463,7 @@ void NavMesh::build(const float* positions, const int positionCount, const int* 
 
     if (config.tileSize)
     {
-        if (!computeTiledNavMesh(verts, tris, cfg, intermediates, triareas))
+        if (!computeTiledNavMesh(verts, tris, cfg, intermediates, triareas,offMeshConfig))
         {
             Log("Unable to create tiled navmesh");
         }
@@ -648,13 +649,16 @@ void NavMesh::build(const float* positions, const int positionCount, const int* 
             params.detailTris = dmesh->tris;
             params.detailTriCount = dmesh->ntris;
             // optional connection between areas
-            params.offMeshConVerts = 0;//geom->getOffMeshConnectionVerts();
-            params.offMeshConRad = 0;//geom->getOffMeshConnectionRads();
-            params.offMeshConDir = 0;//geom->getOffMeshConnectionDirs();
-            params.offMeshConAreas = 0;//geom->getOffMeshConnectionAreas();
-            params.offMeshConFlags = 0;//geom->getOffMeshConnectionFlags();
-            params.offMeshConUserID = 0;//geom->getOffMeshConnectionId();
-            params.offMeshConCount = 0;//geom->getOffMeshConnectionCount();
+            params.offMeshConVerts = offMeshConfig.offMeshConVerts;//geom->getOffMeshConnectionVerts();
+            params.offMeshConRad = offMeshConfig.offMeshConRad;//geom->getOffMeshConnectionRads();
+			unsigned char c;
+			unsigned short s;
+			unsigned int i;
+            params.offMeshConDir = this->getArray(offMeshConfig.offMeshConDir,offMeshConfig.offMeshConCount,c).data();//geom->getOffMeshConnectionDirs();
+            params.offMeshConAreas = this->getArray(offMeshConfig.offMeshConAreas, offMeshConfig.offMeshConCount, c).data();//geom->getOffMeshConnectionAreas();
+            params.offMeshConFlags = this->getArray(offMeshConfig.offMeshConFlags, offMeshConfig.offMeshConCount, s).data();//geom->getOffMeshConnectionFlags();
+            params.offMeshConUserID = this->getArray(offMeshConfig.offMeshConUserID, offMeshConfig.offMeshConCount, i).data();;//geom->getOffMeshConnectionId();
+            params.offMeshConCount = offMeshConfig.offMeshConCount;//geom->getOffMeshConnectionCount();
             params.walkableHeight = config.walkableHeight;
             params.walkableRadius = config.walkableRadius;
             params.walkableClimb = config.walkableClimb;

@@ -1,0 +1,15 @@
+{
+  "__version__": "1.0.1",
+  "layer": [
+    {
+      "name": "RECAST_DEBUG",
+      "value": 1
+    }
+  ],
+  "general": {
+    "designResolution": {
+      "fitHeight": true,
+      "fitWidth": false
+    }
+  }
+}

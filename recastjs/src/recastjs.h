@@ -43,6 +43,33 @@ struct Vec3
     float x, y, z;
 };
 
+struct OffMeshLinkConfig
+{
+	OffMeshLinkConfig(const float* offMeshConVerts, const float* offMeshConRad, const int * offMeshConFlags, const int * offMeshConAreas, const int * offMeshConDir, const int* offMeshConUserID, const int offMeshConCount) {
+		this->offMeshConVerts = offMeshConVerts;
+		this->offMeshConRad = offMeshConRad;
+		this->offMeshConFlags = offMeshConFlags;
+		this->offMeshConAreas = offMeshConAreas;
+		this->offMeshConDir = offMeshConDir;
+		this->offMeshConUserID = offMeshConUserID;
+		this->offMeshConCount = offMeshConCount;
+	}
+	//AreaTypeList 顶点列表每条link 6个顶点
+	const float* offMeshConVerts;
+	//link 弧度
+	const float* offMeshConRad;
+	//link标志
+	const int* offMeshConFlags;//char
+	//AreaTypeList char 区域类型
+	const int* offMeshConAreas;//char
+	//是否双向 0 否 1是
+	const int* offMeshConDir;
+	//link id
+	const int* offMeshConUserID;
+	//link 数量
+	int offMeshConCount;
+};
+
 struct Triangle 
 {
     Triangle(){}
@@ -202,7 +229,16 @@ public:
 
     }
     void destroy();
-    void build(const float* positions, const int positionCount, const int* indices, const int indexCount, const rcConfig& config);
+	template<class T, class K>
+	std::vector<T>& getArray(K* array, int size,T v) {
+		std::vector<T> tempArray;
+		tempArray.resize(size);
+		for (int i = 0; i < size; ++i) {
+			tempArray.push_back((T)array[i]);
+		}
+		return tempArray;
+	}
+    void build(const float* positions, const int positionCount, const int* indices, const int indexCount, const rcConfig& config, const OffMeshLinkConfig& offMeshConfig);
     void buildFromNavmeshData(NavmeshData* navmeshData);
     NavmeshData getNavmeshData() const;
     void freeNavmeshData(NavmeshData* navmeshData);
@@ -248,8 +284,8 @@ protected:
 
     void navMeshPoly(DebugNavMesh& debugNavMesh, const dtNavMesh& mesh, dtPolyRef ref);
     void navMeshPolysWithFlags(DebugNavMesh& debugNavMesh, const dtNavMesh& mesh, const unsigned short polyFlags);
-    bool computeTiledNavMesh(const std::vector<float>& verts, const std::vector<int>& tris, rcConfig& cfg, NavMeshintermediates& intermediates, const std::vector<unsigned char>& triareas);
     int rasterizeTileLayers(const int tx, const int ty, const rcConfig& cfg, TileCacheData* tiles, const int maxTiles, NavMeshintermediates& intermediates, const std::vector<unsigned char>& triareas, const std::vector<float>& verts);
+	bool computeTiledNavMesh(const std::vector<float>& verts, const std::vector<int>& tris, rcConfig & cfg, NavMeshintermediates & intermediates, const std::vector<unsigned char>& triareas,const OffMeshLinkConfig & offMeshConfig);
 };
 
 class Crowd
