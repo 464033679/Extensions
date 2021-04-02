@@ -67,21 +67,10 @@ interface rcConfig {
 };
 
 interface OffMeshLinkConfig {
-	void OffMeshLinkConfig(float[] offMeshConVerts, float[] offMeshConRad, long[] offMeshConFlags, long[] offMeshConAreas, long[] offMeshConDir, long[] offMeshConUserID, long offMeshConCount);
-	//AreaTypeList 顶点列表每条link 6个顶点
-	attribute float[] offMeshConVerts;
-	//link 弧度
-	attribute float[] offMeshConRad;
-	//link标志
-	attribute long[] offMeshConFlags;//char
-	//AreaTypeList char 区域类型
-	attribute long[] offMeshConAreas;//char
-	//是否双向 0 否 1是
-	attribute long[] offMeshConDir;
-	//link id
-	attribute long[] offMeshConUserID;
-	//link 数量
-	attribute long offMeshConCount;
+	void OffMeshLinkConfig();
+	
+	static OffMeshLinkConfig[] GetInstance([Const] float[] offMeshConVerts, [Const] float[] offMeshConRad, [Const] long[] offMeshConFlags,
+		[Const] long[] offMeshConAreas, [Const] long[] offMeshConDir, [Const] long[] offMeshConUserID, [Const] long offMeshConCount);
 };
 
 interface Vec3 {

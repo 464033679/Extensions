@@ -20,6 +20,11 @@ struct rcConfig;
 struct NavMeshintermediates;
 struct TileCacheData;
 
+#ifndef Log(str)
+#define Log(str) std::cout << std::string(str) << std::endl;
+#endif // DEBUG
+
+
 struct Vec3 
 {
     Vec3() {}
@@ -45,29 +50,68 @@ struct Vec3
 
 struct OffMeshLinkConfig
 {
-	OffMeshLinkConfig(const float* offMeshConVerts, const float* offMeshConRad, const int * offMeshConFlags, const int * offMeshConAreas, const int * offMeshConDir, const int* offMeshConUserID, const int offMeshConCount) {
-		this->offMeshConVerts = offMeshConVerts;
-		this->offMeshConRad = offMeshConRad;
-		this->offMeshConFlags = offMeshConFlags;
-		this->offMeshConAreas = offMeshConAreas;
-		this->offMeshConDir = offMeshConDir;
-		this->offMeshConUserID = offMeshConUserID;
-		this->offMeshConCount = offMeshConCount;
+	OffMeshLinkConfig() {
+	}
+	static OffMeshLinkConfig* GetInstance(const float* offMeshConVerts, const  float* offMeshConRad, const  int* offMeshConFlags,
+		const  int * offMeshConAreas, const  int * offMeshConDir, const  int* offMeshConUserID, const  int offMeshConCount)
+	{
+		if (m_pInstance == NULL) {
+			m_pInstance = new OffMeshLinkConfig();
+		}
+		else {
+			m_pInstance->free();
+		}
+		m_pInstance->init(offMeshConVerts, offMeshConRad, offMeshConFlags, offMeshConAreas, offMeshConDir, offMeshConUserID, offMeshConCount);
+		return m_pInstance;
 	}
 	//AreaTypeList 顶点列表每条link 6个顶点
-	const float* offMeshConVerts;
+	float* offMeshConVerts;
 	//link 弧度
-	const float* offMeshConRad;
+	float* offMeshConRad;
 	//link标志
-	const int* offMeshConFlags;//char
+	unsigned short* offMeshConFlags;//char
 	//AreaTypeList char 区域类型
-	const int* offMeshConAreas;//char
+	unsigned char* offMeshConAreas;//char
 	//是否双向 0 否 1是
-	const int* offMeshConDir;
+	unsigned char* offMeshConDir;
 	//link id
-	const int* offMeshConUserID;
+	unsigned int* offMeshConUserID;
 	//link 数量
 	int offMeshConCount;
+	template<class T, class K>
+	T* getArray(K* array, int size, T v) {
+		T* s = new T[size];
+		for (int i = 0; i < size; ++i) {
+			s[i] = (T)array[i];
+		}
+		return s;
+	}
+
+	void init(const float* offMeshConVerts, const  float* offMeshConRad, const  int* offMeshConFlags,
+		const  int * offMeshConAreas, const  int * offMeshConDir, const  int* offMeshConUserID, const  int offMeshConCount) {
+		this->offMeshConVerts = this->getArray(offMeshConVerts, offMeshConCount * 6, 0.1f);
+		this->offMeshConRad = this->getArray(offMeshConRad, offMeshConCount, 0.1f);
+		unsigned char ch;
+		unsigned short s;
+		this->offMeshConFlags = this->getArray(offMeshConFlags, offMeshConCount, s);
+		this->offMeshConAreas = this->getArray(offMeshConAreas, offMeshConCount, ch);
+		this->offMeshConDir = this->getArray(offMeshConDir, offMeshConCount, ch);
+		this->offMeshConUserID = this->getArray(offMeshConUserID, offMeshConCount, 1u);
+		this->offMeshConCount = offMeshConCount;
+		if (this->offMeshConCount) {
+			Log((std::to_string(this->offMeshConVerts[0]) + " " + std::to_string(this->offMeshConRad[0]) + " " + std::to_string(this->offMeshConFlags[0]) + " " + std::to_string(this->offMeshConCount)).c_str());
+		}
+	}
+	void free() {
+		delete[] this->offMeshConVerts;
+		delete[] this->offMeshConRad;
+		delete[] this->offMeshConFlags;
+		delete[] this->offMeshConAreas;
+		delete[] this->offMeshConDir;
+		delete[] this->offMeshConUserID;
+	}
+	private:
+		static OffMeshLinkConfig * m_pInstance;
 };
 
 struct Triangle 
@@ -189,9 +233,12 @@ struct RecastLinearAllocator : public dtTileCacheAlloc
 
 struct RecastMeshProcess : public dtTileCacheMeshProcess
 {
+
     inline RecastMeshProcess()
     {
     }
+
+	const OffMeshLinkConfig* config;
 
     virtual void process(struct dtNavMeshCreateParams* params,
                          unsigned char* polyAreas, unsigned short* polyFlags)
@@ -203,14 +250,16 @@ struct RecastMeshProcess : public dtTileCacheMeshProcess
             polyFlags[i] = 1; //SAMPLE_POLYFLAGS_WALK
         }
 
-        // Pass in off-mesh connections.
-        params->offMeshConVerts = 0;//m_geom->getOffMeshConnectionVerts();
-        params->offMeshConRad = 0;//m_geom->getOffMeshConnectionRads();
-        params->offMeshConDir = 0;//m_geom->getOffMeshConnectionDirs();
-        params->offMeshConAreas = 0;//m_geom->getOffMeshConnectionAreas();
-        params->offMeshConFlags = 0;//m_geom->getOffMeshConnectionFlags();
-        params->offMeshConUserID = 0;//m_geom->getOffMeshConnectionId();
-        params->offMeshConCount = 0;//m_geom->getOffMeshConnectionCount();    
+		if (config) {
+			// Pass in off-mesh connections.
+			params->offMeshConVerts = config->offMeshConVerts;//m_geom->getOffMeshConnectionVerts();
+			params->offMeshConRad = config->offMeshConRad;//m_geom->getOffMeshConnectionRads();
+			params->offMeshConDir = config->offMeshConDir;//m_geom->getOffMeshConnectionDirs();
+			params->offMeshConAreas = config->offMeshConAreas;//m_geom->getOffMeshConnectionAreas();
+			params->offMeshConFlags = config->offMeshConFlags;//m_geom->getOffMeshConnectionFlags();
+			params->offMeshConUserID = config->offMeshConUserID;//m_geom->getOffMeshConnectionId();
+			params->offMeshConCount = config->offMeshConCount;//m_geom->getOffMeshConnectionCount();    
+		}
     }
 };
 
@@ -284,8 +333,8 @@ protected:
 
     void navMeshPoly(DebugNavMesh& debugNavMesh, const dtNavMesh& mesh, dtPolyRef ref);
     void navMeshPolysWithFlags(DebugNavMesh& debugNavMesh, const dtNavMesh& mesh, const unsigned short polyFlags);
+    bool computeTiledNavMesh(const std::vector<float>& verts, const std::vector<int>& tris, rcConfig& cfg, NavMeshintermediates& intermediates, const std::vector<unsigned char>& triareas, const OffMeshLinkConfig& offMeshConfig);
     int rasterizeTileLayers(const int tx, const int ty, const rcConfig& cfg, TileCacheData* tiles, const int maxTiles, NavMeshintermediates& intermediates, const std::vector<unsigned char>& triareas, const std::vector<float>& verts);
-	bool computeTiledNavMesh(const std::vector<float>& verts, const std::vector<int>& tris, rcConfig & cfg, NavMeshintermediates & intermediates, const std::vector<unsigned char>& triareas,const OffMeshLinkConfig & offMeshConfig);
 };
 
 class Crowd

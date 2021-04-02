@@ -14,11 +14,6 @@
 #include <math.h>
 #include <sstream>
 
-void Log(const char* str)
-{
-    std::cout << std::string(str) << std::endl;
-}
-
 int g_seed = 1337;
 inline int fastrand() 
 { 
@@ -286,6 +281,8 @@ bool NavMesh::computeTiledNavMesh(const std::vector<float>& verts, const std::ve
     tcparams.maxSimplificationError = cfg.maxSimplificationError;
     tcparams.maxTiles = tw * th * EXPECTED_LAYERS_PER_TILE;
     tcparams.maxObstacles = 128;
+	m_tmproc.config = &offMeshConfig;
+
 
     m_tileCache = dtAllocTileCache();
     if (!m_tileCache)
@@ -463,7 +460,7 @@ void NavMesh::build(const float* positions, const int positionCount, const int* 
 
     if (config.tileSize)
     {
-        if (!computeTiledNavMesh(verts, tris, cfg, intermediates, triareas,offMeshConfig))
+        if (!computeTiledNavMesh(verts, tris, cfg, intermediates, triareas, offMeshConfig))
         {
             Log("Unable to create tiled navmesh");
         }
@@ -649,15 +646,15 @@ void NavMesh::build(const float* positions, const int positionCount, const int* 
             params.detailTris = dmesh->tris;
             params.detailTriCount = dmesh->ntris;
             // optional connection between areas
-            params.offMeshConVerts = offMeshConfig.offMeshConVerts;//geom->getOffMeshConnectionVerts();
-            params.offMeshConRad = offMeshConfig.offMeshConRad;//geom->getOffMeshConnectionRads();
 			unsigned char c;
 			unsigned short s;
 			unsigned int i;
-            params.offMeshConDir = this->getArray(offMeshConfig.offMeshConDir,offMeshConfig.offMeshConCount,c).data();//geom->getOffMeshConnectionDirs();
-            params.offMeshConAreas = this->getArray(offMeshConfig.offMeshConAreas, offMeshConfig.offMeshConCount, c).data();//geom->getOffMeshConnectionAreas();
-            params.offMeshConFlags = this->getArray(offMeshConfig.offMeshConFlags, offMeshConfig.offMeshConCount, s).data();//geom->getOffMeshConnectionFlags();
-            params.offMeshConUserID = this->getArray(offMeshConfig.offMeshConUserID, offMeshConfig.offMeshConCount, i).data();;//geom->getOffMeshConnectionId();
+            params.offMeshConVerts = offMeshConfig.offMeshConVerts;//geom->getOffMeshConnectionVerts();
+            params.offMeshConRad = offMeshConfig.offMeshConRad;//geom->getOffMeshConnectionRads();
+            params.offMeshConDir = offMeshConfig.offMeshConDir;//geom->getOffMeshConnectionDirs();
+            params.offMeshConAreas = offMeshConfig.offMeshConAreas;//geom->getOffMeshConnectionAreas();
+            params.offMeshConFlags = offMeshConfig.offMeshConFlags;//geom->getOffMeshConnectionFlags();
+            params.offMeshConUserID = offMeshConfig.offMeshConUserID;//geom->getOffMeshConnectionId();
             params.offMeshConCount = offMeshConfig.offMeshConCount;//geom->getOffMeshConnectionCount();
             params.walkableHeight = config.walkableHeight;
             params.walkableRadius = config.walkableRadius;
@@ -667,7 +664,6 @@ void NavMesh::build(const float* positions, const int positionCount, const int* 
             params.cs = cfg.cs;
             params.ch = cfg.ch;
             params.buildBvTree = true;
-        
             if (!dtCreateNavMeshData(&params, &m_navData, &navDataSize))
             {
                 Log("Could not build Detour navmesh.");

@@ -39,7 +39,7 @@ def build():
   wasm = 'wasm' in sys.argv
   closure = 'closure' in sys.argv
 
-  args = '-O3 --llvm-lto 1 -s NO_EXIT_RUNTIME=1 -s NO_FILESYSTEM=1 -s EXPORTED_RUNTIME_METHODS=["Pointer_stringify"]'
+  args = '-O3 --llvm-lto 1 -s NO_EXIT_RUNTIME=1 -s NO_FILESYSTEM=1 -s EXPORTED_RUNTIME_METHODS=["Pointer_stringify"] -s EXPORTED_FUNCTIONS=["_free"]'
   if not wasm:
     args += ' -s WASM=0 -s AGGRESSIVE_VARIABLE_ELIMINATION=1 -s ELIMINATE_DUPLICATE_FUNCTIONS=1 -s SINGLE_FILE=1 -s LEGACY_VM_SUPPORT=1'
   else:
@@ -55,6 +55,7 @@ def build():
   #emcc_args += ['-s', 'ALLOW_MEMORY_GROWTH=1'] # resizable heap, with some amount of slowness
 
   emcc_args += '-s EXPORT_NAME="Recast" -s MODULARIZE=1'.split(' ')
+  emcc_args += '-flto'.split(' ')
 
   target = 'recast.js' if not wasm else 'recast.wasm.js'
 
@@ -95,12 +96,13 @@ def build():
     args = ['-I../recastnavigation/Detour/Include']
     for include in INCLUDES:
       args += ['-include', include]
+    args += ['-r',""]
     building.emcc('glue.cpp', args, 'glue.bc')
     assert(os.path.exists('glue.bc'))
 
     if not os.path.exists('CMakeCache.txt'):
       stage('Configure via CMake')
-      building.configure([emscripten.PYTHON, os.path.join(EMSCRIPTEN_ROOT, 'emcmake'), 'cmake', '..', '-DCMAKE_BUILD_TYPE=Release'])
+      building.configure([ os.path.join(EMSCRIPTEN_ROOT, 'emcmake.bat'), 'cmake', '..', '-DCMAKE_BUILD_TYPE=Release'])
 
     stage('Make')
 
@@ -113,7 +115,7 @@ def build():
 
     stage('Link')
 
-    building.emcc('-DNOTHING_WAKA_WAKA',['glue.bc'] + ['librecastjs.a'], 'recastjs.bc')
+    building.emcc('-DNOTHING_WAKA_WAKA',['glue.bc','-r'] + ['librecastjs.a'], 'recastjs.bc')
     assert os.path.exists('recastjs.bc')
 
     stage('emcc: ' + ' '.join(emcc_args))

@@ -1,20 +1,20 @@
-2021-04-02 19:02:48-log: [Package] menu@1.0.0 enable
-2021-04-02 19:02:48-log: [Package] profile@1.0.0 enable
-2021-04-02 19:02:49-log: [Package] messages@1.0.0 enable
-2021-04-02 19:02:49-log: [Package] program@1.0.0 enable
-2021-04-02 19:02:49-log: [Package] device@1.0.1 enable
-2021-04-02 19:02:49-log: [Package] ui-kit@1.0.0 enable
-2021-04-02 19:02:49-log: [Package] tester@1.0.0 enable
-2021-04-02 19:02:49-log: [Package] preferences@1.0.0 enable
-2021-04-02 19:02:49-log: Start Quick Compile
-2021-04-02 19:02:49-log: QuickCompiler:Compile target 0: 55.749ms
-2021-04-02 19:02:49-log: QuickCompiler:Compile target 1: 23.385ms
-2021-04-02 19:02:49-log: Quick Compile: 111ms
-2021-04-02 19:02:49-log: Setup mods mgr.: 286.616ms
-2021-04-02 19:02:49-log: [Package] engine@1.0.5 enable
-2021-04-02 19:02:53-log: [Package] asset-db@1.0.0 enable
-2021-04-02 19:02:53-log: [Package] programming@1.0.0 enable
-2021-04-02 19:02:53-log: [Package] scene@1.0.0 enable
-2021-04-02 19:02:53-log: [Package] about@1.0.0 enable
-2021-04-02 19:02:53-log: [Package] console@1.0.0 enable
-2021-04-02 19:02:53-log: [Package] project@1.0.1 enable
+2021-04-02 19:21:47-log: [Package] menu@1.0.0 enable
+2021-04-02 19:21:47-log: [Package] profile@1.0.0 enable
+2021-04-02 19:21:47-log: [Package] messages@1.0.0 enable
+2021-04-02 19:21:47-log: [Package] program@1.0.0 enable
+2021-04-02 19:21:47-log: [Package] device@1.0.1 enable
+2021-04-02 19:21:47-log: [Package] ui-kit@1.0.0 enable
+2021-04-02 19:21:47-log: [Package] tester@1.0.0 enable
+2021-04-02 19:21:47-log: [Package] preferences@1.0.0 enable
+2021-04-02 19:21:47-log: Start Quick Compile
+2021-04-02 19:21:47-log: QuickCompiler:Compile target 0: 51.950ms
+2021-04-02 19:21:47-log: QuickCompiler:Compile target 1: 20.221ms
+2021-04-02 19:21:47-log: Quick Compile: 103ms
+2021-04-02 19:21:48-log: Setup mods mgr.: 313.713ms
+2021-04-02 19:21:48-log: [Package] engine@1.0.5 enable
+2021-04-02 19:21:51-log: [Package] programming@1.0.0 enable
+2021-04-02 19:21:51-log: [Package] asset-db@1.0.0 enable
+2021-04-02 19:21:51-log: [Package] console@1.0.0 enable
+2021-04-02 19:21:51-log: [Package] scene@1.0.0 enable
+2021-04-02 19:21:51-log: [Package] project@1.0.1 enable
+2021-04-02 19:21:51-log: [Package] about@1.0.0 enable

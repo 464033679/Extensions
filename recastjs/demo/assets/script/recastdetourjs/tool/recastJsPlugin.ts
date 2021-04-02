@@ -161,12 +161,14 @@ export class RecastJSPlugin implements INavigationEnginePlugin {
                 }
             }
         }
-        let vertexTypeArray = new Float32Array(new ArrayBuffer(4 * vertexLength));
-        let facesTypeArray = new Uint16Array(new ArrayBuffer(2 * facesLength));
+        let vertexTypeArray = [];
+        let facesTypeArray = [];
         startId = 0;
         let facesIndex = 0;
         for(let i = 0;i < vertexPosList.length;++i){
-            vertexTypeArray.set(vertexPosList[i],startId * 3);
+            for(let j = startId * 3; j < vertexPosList[i].length + startId * 3;++j){
+                vertexTypeArray[j] = vertexPosList[i][j - startId * 3];
+            }
             let list = facesPositions[i];
             for(let j = 0;j < list.length;++j){
                 facesTypeArray[facesIndex++] = startId + list[j];
