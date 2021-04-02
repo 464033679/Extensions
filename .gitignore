@@ -1,3 +1,10 @@
 node_modules
 .tempChromeProfileForDebug
-*.map 
+*.map
+recastjs/demo/library/
+recastjs/demo/temp/
+recastjs/demo/local/
+recastjs/demo/build/
+recastjs/.vs/
+recastjs/build/
+ 
