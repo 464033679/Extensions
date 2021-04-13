@@ -9,12 +9,12 @@
         "id": "1617363116986",
         "progress": 1,
         "state": "success",
-        "message": "Build success in 10094 ms!",
+        "message": "Build success in 14368 ms!",
         "options": {
           "name": "demo",
           "platform": "web-mobile",
           "buildPath": "./build",
-          "debug": false,
+          "debug": true,
           "md5Cache": false,
           "sourceMaps": false,
           "replaceSplashScreen": false,
@@ -42,7 +42,7 @@
             }
           }
         },
-        "time": "2021-4-2 19:31",
+        "time": "2021-4-14 01:26",
         "dirty": false
       }
     }
@@ -50,6 +50,7 @@
   "common": {
     "outputName": "web-mobile-001",
     "mainBundleCompressionType": "merge_dep",
-    "platform": "web-mobile"
+    "platform": "web-mobile",
+    "debug": true
   }
 }

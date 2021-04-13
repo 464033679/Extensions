@@ -1,1 +1,216 @@
-{"importBase":"import","nativeBase":"native","name":"resources","deps":[],"uuids":["1brw/JvvpFnIvdrxpFCgMZ","60xchJDPpGFIiAwJMJcF4N@04114","60xchJDPpGFIiAwJMJcF4N@0ba00","60xchJDPpGFIiAwJMJcF4N@1397d","60xchJDPpGFIiAwJMJcF4N@210bd","60xchJDPpGFIiAwJMJcF4N@2f6d1","60xchJDPpGFIiAwJMJcF4N@34040","60xchJDPpGFIiAwJMJcF4N@443f1","60xchJDPpGFIiAwJMJcF4N@5a7e7","60xchJDPpGFIiAwJMJcF4N@645b3","60xchJDPpGFIiAwJMJcF4N@715f6","60xchJDPpGFIiAwJMJcF4N@7702e","60xchJDPpGFIiAwJMJcF4N@7b817","60xchJDPpGFIiAwJMJcF4N@83026","60xchJDPpGFIiAwJMJcF4N@8bba5","60xchJDPpGFIiAwJMJcF4N@94d77","60xchJDPpGFIiAwJMJcF4N@9638e","60xchJDPpGFIiAwJMJcF4N@9fe9f","60xchJDPpGFIiAwJMJcF4N@a2ca6","60xchJDPpGFIiAwJMJcF4N@a401a","60xchJDPpGFIiAwJMJcF4N@a50cc","60xchJDPpGFIiAwJMJcF4N@a5ee5","60xchJDPpGFIiAwJMJcF4N@c9d93","60xchJDPpGFIiAwJMJcF4N@ca450","60xchJDPpGFIiAwJMJcF4N@d54d8","60xchJDPpGFIiAwJMJcF4N@da116","60xchJDPpGFIiAwJMJcF4N@da960","60xchJDPpGFIiAwJMJcF4N@ddd44","60xchJDPpGFIiAwJMJcF4N@df3c0","60xchJDPpGFIiAwJMJcF4N@e7c01","60xchJDPpGFIiAwJMJcF4N@e91fb","60xchJDPpGFIiAwJMJcF4N@f0235","60xchJDPpGFIiAwJMJcF4N@f8095","f0t0kHcQBEFrDXf5950Pg2"],"paths":{"1":["nav_test/Generic_24",1,1],"2":["nav_test/Generic_18",1,1],"3":["nav_test/Generic_17",1,1],"4":["nav_test/Generic",1,1],"5":["nav_test/Cube",1,1],"6":["nav_test/Generic_13",1,1],"7":["nav_test/Cube_1",1,1],"8":["nav_test/Generic_15",1,1],"9":["nav_test/Cube_2",1,1],"10":["nav_test/Generic_16",1,1],"11":["nav_test/Generic_22",1,1],"12":["nav_test/Generic_10",1,1],"13":["nav_test/Generic_9",1,1],"14":["nav_test/Generic_4",1,1],"15":["nav_test/Generic_8",1,1],"16":["nav_test/Generic_23",1,1],"17":["nav_test/Cube_4",1,1],"18":["nav_test/Generic_11",1,1],"19":["nav_test/Generic_3",1,1],"20":["nav_test/Generic_1",1,1],"21":["nav_test/Generic_21",1,1],"22":["nav_test/Generic_5",1,1],"23":["nav_test/nav_test",2,1],"24":["nav_test/Default",0,1],"25":["nav_test/Cube_3",1,1],"26":["nav_test/Generic_6",1,1],"27":["nav_test/Generic_2",1,1],"28":["nav_test/Generic_14",1,1],"29":["nav_test/Generic_7",1,1],"30":["nav_test/Generic_12",1,1],"31":["nav_test/Generic_20",1,1],"32":["nav_test/Generic_19",1,1],"33":["commonLevel/material/material",0]},"scenes":{},"packs":{},"versions":{"import":[],"native":[]},"redirect":[],"debug":false,"types":["cc.Material","cc.Mesh","cc.Prefab"]}
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "resources",
+    "deps": [],
+    "uuids": [
+        "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@04114",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@0ba00",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@1397d",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@210bd",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@2f6d1",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@34040",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@443f1",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@5a7e7",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@645b3",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@715f6",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@7702e",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@7b817",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@83026",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@8bba5",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@94d77",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@9638e",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@9fe9f",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a2ca6",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a401a",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a50cc",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a5ee5",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@c9d93",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@ca450",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@d54d8",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@da116",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@da960",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@ddd44",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@df3c0",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@e7c01",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@e91fb",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@f0235",
+        "60c5c849-0cfa-4614-8880-c09309705e0d@f8095",
+        "f0b74907-7100-4416-b0d7-7f9f79d0f836"
+    ],
+    "paths": {
+        "f0b74907-7100-4416-b0d7-7f9f79d0f836": [
+            "commonLevel/material/material",
+            "cc.Material"
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@34040": [
+            "nav_test/Generic_13",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@83026": [
+            "nav_test/Generic_9",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@210bd": [
+            "nav_test/Generic",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a50cc": [
+            "nav_test/Generic_1",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@ddd44": [
+            "nav_test/Generic_2",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a401a": [
+            "nav_test/Generic_3",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@8bba5": [
+            "nav_test/Generic_4",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@c9d93": [
+            "nav_test/Generic_5",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@da960": [
+            "nav_test/Generic_6",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@e7c01": [
+            "nav_test/Generic_7",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@94d77": [
+            "nav_test/Generic_8",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@7b817": [
+            "nav_test/Generic_10",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a2ca6": [
+            "nav_test/Generic_11",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@e91fb": [
+            "nav_test/Generic_12",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@df3c0": [
+            "nav_test/Generic_14",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@5a7e7": [
+            "nav_test/Generic_15",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@715f6": [
+            "nav_test/Generic_16",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@1397d": [
+            "nav_test/Generic_17",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@0ba00": [
+            "nav_test/Generic_18",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@f8095": [
+            "nav_test/Generic_19",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@f0235": [
+            "nav_test/Generic_20",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@a5ee5": [
+            "nav_test/Generic_21",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@2f6d1": [
+            "nav_test/Cube",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@7702e": [
+            "nav_test/Generic_22",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@9638e": [
+            "nav_test/Generic_23",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@04114": [
+            "nav_test/Generic_24",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@443f1": [
+            "nav_test/Cube_1",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@645b3": [
+            "nav_test/Cube_2",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@da116": [
+            "nav_test/Cube_3",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@9fe9f": [
+            "nav_test/Cube_4",
+            "cc.Mesh",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@d54d8": [
+            "nav_test/Default",
+            "cc.Material",
+            1
+        ],
+        "60c5c849-0cfa-4614-8880-c09309705e0d@ca450": [
+            "nav_test/nav_test",
+            "cc.Prefab",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true
+}

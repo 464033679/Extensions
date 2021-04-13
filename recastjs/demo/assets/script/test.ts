@@ -7,8 +7,8 @@
 import * as cc from 'cc';
 import {_decorator, Component, geometry, math} from 'cc';
 import RecastDetourManager from "./recastdetourjs/tool/RecastDetourManager";
-import {RecastJSPlugin} from "./recastdetourjs/tool/recastJsPlugin";
-import {IObstacle} from "./recastdetourjs/tool/INavigationEngine";
+import {IObstacle} from "cocos-recast/dist/INavigationEngine";
+import {RecastJSPlugin} from "cocos-recast";
 
 const { ccclass, property } = _decorator;
 @ccclass('Test')
@@ -34,14 +34,14 @@ export class Test extends Component {
     private xKey: number = 0;
     private startLinkPos?: cc.Vec3;
     private moveDis!: number;
-    start () {
+    async start () {
         this.pool = new cc.NodePool();
         this.roleNodeRoot = this.roleNode.parent!;
         this.roleNode.removeFromParent();
         this.cylinderObstacleNode.removeFromParent();
         this.boxObstacleNode.removeFromParent();
         this.moveDis = 0;
-        this.recastDetourManager = RecastDetourManager.getInstanceByNode(this.node,this.debugMaterial,1,this.node);
+        this.recastDetourManager = await RecastDetourManager.getInstanceByNode(this.node,this.debugMaterial,1,this.node);
         this.node.on(cc.Node.EventType.TOUCH_END,this.onTouch,this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE,this.onMove,this);
         // @ts-ignore
@@ -191,6 +191,9 @@ export class Test extends Component {
     }
 
     update (deltaTime: number) {
+        if(!this.recastDetourManager){
+            return;
+        }
         this.recastDetourManager.update(deltaTime);
         let ySpeed = this.yKey ? (this.yKey == cc.macro.KEY.w ? 1 : -1) : 0;
         let xSpeed = this.xKey ? (this.xKey == cc.macro.KEY.d ? 1 : -1) : 0;

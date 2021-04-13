@@ -1,0 +1,21 @@
+{
+  "name": "cocos-recast",
+  "version": "1.0.7",
+  "description": "",
+  "main": "./dist/recastJsPlugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": "./dist/recastJsPlugin.js"
+    },
+    "./dist/recast": {
+      "import": "./dist/recast.js"
+    }
+  }
+}

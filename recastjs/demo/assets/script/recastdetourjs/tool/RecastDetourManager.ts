@@ -5,9 +5,11 @@
 @desc
 **/
 import * as cc from "cc";
-import {RecastConfig, RecastJSCrowd, RecastJSPlugin} from "./recastJsPlugin";
+
 import {Vec3} from "cc";
-import {IAgentParameters, INavMeshParameters, IObstacle, OffMeshLinkConfig} from "./INavigationEngine";
+import {RecastConfig, RecastJSCrowd, RecastJSPlugin} from "cocos-recast";
+import {INavMeshParameters, IObstacle, OffMeshLinkConfig} from "cocos-recast/dist/INavigationEngine";
+
 const {ccclass, property} = cc._decorator;
 let CON_LINK_ID = 1000;
 @ccclass("RecastDetourManager")
@@ -111,9 +113,9 @@ export default class RecastDetourManager{
         this.init();
     }
 
-    static getInstanceByNode(node : cc.Node,debugMaterial : cc.Material,debugLayer : number,root : cc.Node){
+    static async getInstanceByNode(node : cc.Node,debugMaterial : cc.Material,debugLayer : number,root : cc.Node){
         let comps = node.getComponentsInChildren(cc.MeshRenderer);
-        let instance = this.getInstance(debugMaterial,debugLayer,root);
+        let instance = await this.getInstance(debugMaterial,debugLayer,root);
         let navmeshParameters = {
             cs: 0.2,
             ch: 0.2,
@@ -142,7 +144,7 @@ export default class RecastDetourManager{
 
 
 
-    protected static getInstance(debugMaterial ?: cc.Material,debugLayer ?: number,root ?: cc.Node){
+    protected static async getInstance(debugMaterial ?: cc.Material,debugLayer ?: number,root ?: cc.Node){
         if(this.instance){
             return  this.instance;
         }
@@ -151,13 +153,18 @@ export default class RecastDetourManager{
         instance.root = root;
         instance.debugMaterial = debugMaterial!;
         instance.debugLayer = debugLayer!;
-        let navigationPlugin = new RecastJSPlugin();
-        instance.navigationPlugin = navigationPlugin;
+        let navigationPlugin : RecastJSPlugin;
+        await new Promise(resolve => {
+            navigationPlugin = new RecastJSPlugin(()=>{
+                resolve();
+            });
+        })
+        instance.navigationPlugin = navigationPlugin!;
         return instance;
     }
 
-    static getInstanceByBin(asset : ArrayBuffer,debugMaterial : cc.Material,debugLayer : number){
-        let instance = this.getInstance(debugMaterial,debugLayer);
+    static async getInstanceByBin(asset : ArrayBuffer,debugMaterial : cc.Material,debugLayer : number){
+        let instance = await this.getInstance(debugMaterial,debugLayer);
         instance.navigationPlugin.buildFromNavmeshData(new Uint8Array(asset));
         instance.init();
         return instance;
