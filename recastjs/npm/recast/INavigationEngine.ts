@@ -213,10 +213,9 @@ export interface ICrowd {
      * You can attach anything to that node. The node position is updated in the scene update tick.
      * @param pos world position that will be constrained by the navigation mesh
      * @param parameters agent parameters
-     * @param transform hooked to the agent that will be update by the scene
      * @returns agent index
      */
-    addAgent(pos: cc.Vec3, parameters: IAgentParameters, transform: cc.Node): number;
+    addAgent(pos: cc.Vec3, parameters: IAgentParameters): number;
 
     /**
      * Returns the agent position in world space
@@ -298,6 +297,12 @@ export interface ICrowd {
      * @param destination targeted world position
      */
     agentGoto(index: number, destination: cc.Vec3): void;
+
+    /**
+     *  call resetMoveTarget
+     * @param index agent index returned by addAgent
+     */
+    agentStop(index: number):void
 
     /**
      * Teleport the agent to a new position

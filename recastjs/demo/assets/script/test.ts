@@ -7,7 +7,7 @@
 import * as cc from 'cc';
 import {_decorator, Component, geometry, math} from 'cc';
 import RecastDetourManager from "./recastdetourjs/tool/RecastDetourManager";
-import {IObstacle} from "cocos-recast/dist/INavigationEngine";
+import {IObstacle} from "dist/INavigationEngine";
 import {RecastJSPlugin} from "cocos-recast";
 
 const { ccclass, property } = _decorator;
@@ -34,6 +34,7 @@ export class Test extends Component {
     private xKey: number = 0;
     private startLinkPos?: cc.Vec3;
     private moveDis!: number;
+    private boss: number = 0;
     async start () {
         this.pool = new cc.NodePool();
         this.roleNodeRoot = this.roleNode.parent!;
@@ -42,6 +43,8 @@ export class Test extends Component {
         this.boxObstacleNode.removeFromParent();
         this.moveDis = 0;
         this.recastDetourManager = await RecastDetourManager.getInstanceByNode(this.node,this.debugMaterial,1,this.node);
+
+
         this.node.on(cc.Node.EventType.TOUCH_END,this.onTouch,this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE,this.onMove,this);
         // @ts-ignore
@@ -51,6 +54,10 @@ export class Test extends Component {
         this.cylinderObstaclePool = new cc.NodePool();
         this.boxObstaclePool = new cc.NodePool();
         //this.node.children[0].active = false;
+    }
+
+    getRandomPos(){
+        return cc.v3((Math.random() - 0.5) * 100,2,(Math.random() - 0.5) * 100).add(this.node.getWorldPosition());
     }
 
     onKeyDown(event : cc.EventKeyboard){
@@ -107,7 +114,6 @@ export class Test extends Component {
 
 
 
-
     onTouch(touch : cc.Touch){
         if(this.moveDis > 50){
             this.moveDis = 0;
@@ -129,7 +135,13 @@ export class Test extends Component {
         ray.computeHit(out,distance);
         switch (this.type) {
             case 1 :
-                this.recastDetourManager.addAgents(out,this.get(this.pool,this.roleNode));
+                let id = this.recastDetourManager.addAgents(out);
+                let role = this.get(this.pool,this.roleNode);
+                let comp = role.getComponent(cc.RenderableComponent)!;
+                comp.unscheduleAllCallbacks();
+                comp.schedule(()=>{
+                    role.setWorldPosition(this.recastDetourManager.crowd!.getAgentPosition(id));
+                });
                 break;
             case 2:
                 this.recastDetourManager.agentGoto(out);

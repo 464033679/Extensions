@@ -34,6 +34,8 @@ var RecastJSPlugin = /** @class */ (function () {
                     cc.error("RecastJS is not available. Please make sure you included the js file.");
                     return;
                 }
+                _this._tempVec1 = new _this.bjsRECAST.Vec3();
+                _this._tempVec2 = new _this.bjsRECAST.Vec3();
                 initCb();
             }));
         }
@@ -43,6 +45,8 @@ var RecastJSPlugin = /** @class */ (function () {
                 cc.error("RecastJS is not available. Please make sure you included the js file.");
                 return;
             }
+            this._tempVec1 = new this.bjsRECAST.Vec3();
+            this._tempVec2 = new this.bjsRECAST.Vec3();
             initCb();
         }
         this.setTimeStep();
@@ -242,12 +246,12 @@ var RecastJSPlugin = /** @class */ (function () {
      * @returns the closest point to position constrained by the navigation mesh
      */
     RecastJSPlugin.prototype.getClosestPoint = function (position) {
-        var p = new this.bjsRECAST.Vec3(position.x, position.y, position.z);
-        var ret = this.navMesh.getClosestPoint(p);
-        position.x = ret.x;
-        position.y = ret.y;
-        position.z = ret.z;
-        return position;
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        var ret = this.navMesh.getClosestPoint(this._tempVec1);
+        var pr = new Vec3(ret.x, ret.y, ret.z);
+        return pr;
     };
     /**
      * Get a navigation mesh constrained position, closest to the parameter position
@@ -255,8 +259,10 @@ var RecastJSPlugin = /** @class */ (function () {
      * @param result output the closest point to position constrained by the navigation mesh
      */
     RecastJSPlugin.prototype.getClosestPointToRef = function (position, result) {
-        var p = new this.bjsRECAST.Vec3(position.x, position.y, position.z);
-        var ret = this.navMesh.getClosestPoint(p);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        var ret = this.navMesh.getClosestPoint(this._tempVec1);
         result.set(ret.x, ret.y, ret.z);
     };
     /**
@@ -266,8 +272,10 @@ var RecastJSPlugin = /** @class */ (function () {
      * @returns the closest point to position constrained by the navigation mesh
      */
     RecastJSPlugin.prototype.getRandomPointAround = function (position, maxRadius) {
-        var p = new this.bjsRECAST.Vec3(position.x, position.y, position.z);
-        var ret = this.navMesh.getRandomPointAround(p, maxRadius);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        var ret = this.navMesh.getRandomPointAround(this._tempVec1, maxRadius);
         var pr = new Vec3(ret.x, ret.y, ret.z);
         return pr;
     };
@@ -278,8 +286,10 @@ var RecastJSPlugin = /** @class */ (function () {
      * @param result output the closest point to position constrained by the navigation mesh
      */
     RecastJSPlugin.prototype.getRandomPointAroundToRef = function (position, maxRadius, result) {
-        var p = new this.bjsRECAST.Vec3(position.x, position.y, position.z);
-        var ret = this.navMesh.getRandomPointAround(p, maxRadius);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        var ret = this.navMesh.getRandomPointAround(this._tempVec1, maxRadius);
         result.set(ret.x, ret.y, ret.z);
     };
     /**
@@ -289,9 +299,13 @@ var RecastJSPlugin = /** @class */ (function () {
      * @returns the resulting point along the navmesh
      */
     RecastJSPlugin.prototype.moveAlong = function (position, destination) {
-        var p = new this.bjsRECAST.Vec3(position.x, position.y, position.z);
-        var d = new this.bjsRECAST.Vec3(destination.x, destination.y, destination.z);
-        var ret = this.navMesh.moveAlong(p, d);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        this._tempVec2.x = destination.x;
+        this._tempVec2.y = destination.y;
+        this._tempVec2.z = destination.z;
+        var ret = this.navMesh.moveAlong(this._tempVec1, this._tempVec2);
         var pr = new Vec3(ret.x, ret.y, ret.z);
         return pr;
     };
@@ -302,9 +316,13 @@ var RecastJSPlugin = /** @class */ (function () {
      * @param result output the resulting point along the navmesh
      */
     RecastJSPlugin.prototype.moveAlongToRef = function (position, destination, result) {
-        var p = new this.bjsRECAST.Vec3(position.x, position.y, position.z);
-        var d = new this.bjsRECAST.Vec3(destination.x, destination.y, destination.z);
-        var ret = this.navMesh.moveAlong(p, d);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        this._tempVec2.x = destination.x;
+        this._tempVec2.y = destination.y;
+        this._tempVec2.z = destination.z;
+        var ret = this.navMesh.moveAlong(this._tempVec1, this._tempVec2);
         result.set(ret.x, ret.y, ret.z);
     };
     /**
@@ -315,9 +333,13 @@ var RecastJSPlugin = /** @class */ (function () {
      */
     RecastJSPlugin.prototype.computePath = function (start, end) {
         var pt;
-        var startPos = new this.bjsRECAST.Vec3(start.x, start.y, start.z);
-        var endPos = new this.bjsRECAST.Vec3(end.x, end.y, end.z);
-        var navPath = this.navMesh.computePath(startPos, endPos);
+        this._tempVec1.x = start.x;
+        this._tempVec1.y = start.y;
+        this._tempVec1.z = start.z;
+        this._tempVec2.x = end.x;
+        this._tempVec2.y = end.y;
+        this._tempVec2.z = end.z;
+        var navPath = this.navMesh.computePath(this._tempVec1, this._tempVec2);
         var pointCount = navPath.getPointCount();
         var positions = [];
         for (pt = 0; pt < pointCount; pt++) {
@@ -344,8 +366,10 @@ var RecastJSPlugin = /** @class */ (function () {
      * @param extent x,y,z value that define the extent around the queries point of reference
      */
     RecastJSPlugin.prototype.setDefaultQueryExtent = function (extent) {
-        var ext = new this.bjsRECAST.Vec3(extent.x, extent.y, extent.z);
-        this.navMesh.setDefaultQueryExtent(ext);
+        this._tempVec1.x = extent.x;
+        this._tempVec1.y = extent.y;
+        this._tempVec1.z = extent.z;
+        this.navMesh.setDefaultQueryExtent(this._tempVec1);
     };
     /**
      * Get the Bounding box extent specified by setDefaultQueryExtent
@@ -405,7 +429,10 @@ var RecastJSPlugin = /** @class */ (function () {
      * @returns the obstacle freshly created
      */
     RecastJSPlugin.prototype.addCylinderObstacle = function (position, radius, height) {
-        return this.navMesh.addCylinderObstacle(new this.bjsRECAST.Vec3(position.x, position.y, position.z), radius, height);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        return this.navMesh.addCylinderObstacle(this._tempVec1, radius, height);
     };
     /**
      * Creates an oriented box obstacle and add it to the navigation
@@ -415,7 +442,13 @@ var RecastJSPlugin = /** @class */ (function () {
      * @returns the obstacle freshly created
      */
     RecastJSPlugin.prototype.addBoxObstacle = function (position, extent, angle) {
-        return this.navMesh.addBoxObstacle(new this.bjsRECAST.Vec3(position.x, position.y, position.z), new this.bjsRECAST.Vec3(extent.x, extent.y, extent.z), angle);
+        this._tempVec1.x = position.x;
+        this._tempVec1.y = position.y;
+        this._tempVec1.z = position.z;
+        this._tempVec2.x = extent.x;
+        this._tempVec2.y = extent.y;
+        this._tempVec2.z = extent.z;
+        return this.navMesh.addBoxObstacle(this._tempVec1, this._tempVec2, angle);
     };
     /**
      * Removes an obstacle created by addCylinderObstacle or addBoxObstacle
@@ -452,10 +485,6 @@ var RecastJSCrowd = /** @class */ (function () {
          */
         this.recastCrowd = {};
         /**
-         * One transform per agent
-         */
-        this.transforms = new Array();
-        /**
          * All agents created
          */
         this.agents = new Array();
@@ -471,7 +500,7 @@ var RecastJSCrowd = /** @class */ (function () {
      * @param transform hooked to the agent that will be update by the scene
      * @returns agent index
      */
-    RecastJSCrowd.prototype.addAgent = function (pos, parameters, transform) {
+    RecastJSCrowd.prototype.addAgent = function (pos, parameters) {
         var agentParams = new this.bjsRECASTPlugin.bjsRECAST.dtCrowdAgentParams();
         agentParams.radius = parameters.radius;
         agentParams.height = parameters.height;
@@ -485,7 +514,6 @@ var RecastJSCrowd = /** @class */ (function () {
         agentParams.queryFilterType = 0;
         agentParams.userData = 0;
         var agentIndex = this.recastCrowd.addAgent(new this.bjsRECASTPlugin.bjsRECAST.Vec3(pos.x, pos.y, pos.z), agentParams);
-        this.transforms.push(transform);
         this.agents.push(agentIndex);
         return agentIndex;
     };
@@ -575,6 +603,13 @@ var RecastJSCrowd = /** @class */ (function () {
         this.recastCrowd.agentGoto(index, new this.bjsRECASTPlugin.bjsRECAST.Vec3(destination.x, destination.y, destination.z));
     };
     /**
+     *  call resetMoveTarget
+     * @param index agent index returned by addAgent
+     */
+    RecastJSCrowd.prototype.agentStop = function (index) {
+        this.recastCrowd.agentStop(index);
+    };
+    /**
      * Teleport the agent to a new position
      * @param index agent index returned by addAgent
      * @param destination targeted world position
@@ -621,7 +656,6 @@ var RecastJSCrowd = /** @class */ (function () {
         var item = this.agents.indexOf(index);
         if (item > -1) {
             this.agents.splice(item, 1);
-            this.transforms.splice(item, 1)[0].destroy();
         }
     };
     /**
@@ -656,10 +690,6 @@ var RecastJSCrowd = /** @class */ (function () {
             for (var i = 0; i < iterationCount; i++) {
                 this.recastCrowd.update(step);
             }
-        }
-        // update transforms
-        for (var index = 0; index < this.agents.length; index++) {
-            this.transforms[index].worldPosition = this.getAgentPosition(this.agents[index]);
         }
     };
     /**

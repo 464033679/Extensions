@@ -351,6 +351,7 @@ public:
     int getAgentState(int idx);
     bool overOffmeshConnection(int idx);
     void agentGoto(int idx, const Vec3& destination);
+	void agentStop(int idx);
     void agentTeleport(int idx, const Vec3& destination);
     dtCrowdAgentParams getAgentParameters(const int idx);
     void setAgentParameters(const int idx, const dtCrowdAgentParams* params);

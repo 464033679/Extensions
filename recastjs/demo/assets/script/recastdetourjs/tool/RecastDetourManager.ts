@@ -121,17 +121,17 @@ export default class RecastDetourManager{
             ch: 0.2,
             walkableSlopeAngle: 45,
             walkableHeight:15,
-            walkableClimb: 2.0,
-            walkableRadius: 0.6,
+            walkableClimb: 0.1,
+            walkableRadius: 1.0,
             maxEdgeLen: 12.,
-            maxSimplificationError: 0.5,
+            maxSimplificationError: 0.1,
             minRegionArea: 8,
             mergeRegionArea: 20,
-            maxVertsPerPoly: 6,
+            maxVertsPerPoly: 3,
             detailSampleDist: 6,
-            detailSampleMaxError: 1,
+            detailSampleMaxError: 0.1,
             offMeshLinkConfig : instance.linkList,
-            tileSize : 24
+            tileSize : 0
         };
         instance.config = navmeshParameters;
         instance.meshes = comps;
@@ -175,7 +175,7 @@ export default class RecastDetourManager{
             this.removeAllAgents();
         }
         let scene = cc.director.getScene()!;
-        let crowd = this.navigationPlugin.createCrowd(10, 0.1, scene);
+        let crowd = this.navigationPlugin.createCrowd(100, 5, scene);
         this.crowd = crowd as RecastJSCrowd;
         this.updateNavMeshDebug();
     }
@@ -205,22 +205,40 @@ export default class RecastDetourManager{
     }
 
     /**
+     * 角色导航至position
+     * @param position
+     */
+    agentGotoByIndex(index : number,position : cc.Vec3){
+        let out = position.multiplyScalar(1 / RecastConfig.RATIO);
+        out = this.navigationPlugin.getClosestPoint(out);
+        console.log("goto",out);
+        this.crowd!.agentGoto(index,out);
+    }
+
+    agentTeleportByIndex(index : number,position : cc.Vec3){
+        let out = position.multiplyScalar(1 / RecastConfig.RATIO);
+        out = this.navigationPlugin.getClosestPoint(out);
+        console.log("goto",out);
+        this.crowd!.agentTeleport(index,out);
+    }
+
+    /**
      * 添加角色
      * @param startPos
-     * @param node
      */
-    addAgents(startPos : cc.Vec3,node : cc.Node){
+    addAgents(startPos : cc.Vec3){
         startPos.multiplyScalar(1 / RecastConfig.RATIO);
         this.navigationPlugin.getClosestPoint(startPos);
         let agentParams = {
-            radius: 0.5,
+            radius: 1,
             height: 2,
-            maxAcceleration: 20.0,
+            maxAcceleration: 1000.0,
             maxSpeed: 6.0,
-            collisionQueryRange: 0,
-            pathOptimizationRange: 0.0,
+            collisionQueryRange: 2,
+            pathOptimizationRange: 2 * 30,
             separationWeight: 1.0};
-        let agentIndex = this.crowd!.addAgent(startPos, agentParams, node);
+        let agentIndex = this.crowd!.addAgent(startPos, agentParams);
+        return agentIndex;
     }
 
     /**
@@ -293,9 +311,9 @@ export default class RecastDetourManager{
      * @param node
      */
     addRandomAgents(node : cc.Node){
-        let randomPos = this.navigationPlugin.getRandomPointAround(cc.v3(0,0,0), 2);
+        let randomPos = this.navigationPlugin.getRandomPointAround(cc.v3(0,0,0), 100);
         console.log(randomPos);
-        this.addAgents(randomPos,node);
+        return this.addAgents(randomPos);
     }
 
     update(dt : number) {

@@ -1348,6 +1348,11 @@ void Crowd::agentGoto(int idx, const Vec3& destination)
     m_crowd->requestMoveTarget(idx, polyRef, &pos.x);
 }
 
+void Crowd::agentStop(int idx)
+{
+	m_crowd->resetMoveTarget(idx);
+}
+
 void Crowd::agentTeleport(int idx, const Vec3& destination)
 {
     if (idx < 0 || idx > m_crowd->getAgentCount())

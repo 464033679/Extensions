@@ -176,6 +176,7 @@ interface Crowd {
     long getAgentState([Const] long idx);
     boolean overOffmeshConnection([Const] long idx);
     void agentGoto([Const] long idx, [Const, Ref] Vec3 destination);
+	void agentStop([Const] long idx);
     void agentTeleport([Const] long idx, [Const, Ref] Vec3 destination);
     [Value] dtCrowdAgentParams getAgentParameters([Const] long idx);
     void setAgentParameters([Const] long idx, [Const] dtCrowdAgentParams params);

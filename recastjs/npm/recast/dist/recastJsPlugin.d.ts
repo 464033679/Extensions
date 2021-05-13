@@ -22,6 +22,8 @@ export declare class RecastJSPlugin implements INavigationEnginePlugin {
     navMesh: any;
     private _maximumSubStepCount;
     private _timeStep;
+    private _tempVec1;
+    private _tempVec2;
     /**
      * Initializes the recastJS plugin
      * @param recastInjection can be used to inject your own recast reference
@@ -209,10 +211,6 @@ export declare class RecastJSCrowd implements ICrowd {
      */
     recastCrowd: any;
     /**
-     * One transform per agent
-     */
-    transforms: cc.Node[];
-    /**
      * All agents created
      */
     agents: number[];
@@ -237,7 +235,7 @@ export declare class RecastJSCrowd implements ICrowd {
      * @param transform hooked to the agent that will be update by the scene
      * @returns agent index
      */
-    addAgent(pos: Vec3, parameters: IAgentParameters, transform: cc.Node): number;
+    addAgent(pos: Vec3, parameters: IAgentParameters): number;
     /**
      * Returns the agent position in world space
      * @param index agent index returned by addAgent
@@ -297,6 +295,11 @@ export declare class RecastJSCrowd implements ICrowd {
      * @param destination targeted world position
      */
     agentGoto(index: number, destination: Vec3): void;
+    /**
+     *  call resetMoveTarget
+     * @param index agent index returned by addAgent
+     */
+    agentStop(index: number): void;
     /**
      * Teleport the agent to a new position
      * @param index agent index returned by addAgent

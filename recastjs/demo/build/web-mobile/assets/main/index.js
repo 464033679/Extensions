@@ -232,17 +232,17 @@ System.register("chunks:///_virtual/RecastDetourManager.ts", ['cc', './recastJsP
                       ch: 0.2,
                       walkableSlopeAngle: 45,
                       walkableHeight: 15,
-                      walkableClimb: 2.0,
-                      walkableRadius: 0.6,
+                      walkableClimb: 0.1,
+                      walkableRadius: 1.0,
                       maxEdgeLen: 12.,
-                      maxSimplificationError: 0.5,
+                      maxSimplificationError: 0.1,
                       minRegionArea: 8,
                       mergeRegionArea: 20,
-                      maxVertsPerPoly: 6,
+                      maxVertsPerPoly: 3,
                       detailSampleDist: 6,
-                      detailSampleMaxError: 1,
+                      detailSampleMaxError: 0.1,
                       offMeshLinkConfig: instance.linkList,
-                      tileSize: 24
+                      tileSize: 0
                     };
                     instance.config = navmeshParameters;
                     instance.meshes = comps;
@@ -348,7 +348,7 @@ System.register("chunks:///_virtual/RecastDetourManager.ts", ['cc', './recastJsP
           }
 
           var scene = director.getScene();
-          var crowd = this.navigationPlugin.createCrowd(10, 0.1, scene);
+          var crowd = this.navigationPlugin.createCrowd(100, 5, scene);
           this.crowd = crowd;
           this.updateNavMeshDebug();
         };
@@ -380,25 +380,44 @@ System.register("chunks:///_virtual/RecastDetourManager.ts", ['cc', './recastJsP
           }
         }
         /**
-         * 添加角色
-         * @param startPos
-         * @param node
+         * 角色导航至position
+         * @param position
          */
         ;
 
-        _proto.addAgents = function addAgents(startPos, node) {
+        _proto.agentGotoByIndex = function agentGotoByIndex(index, position) {
+          var out = position.multiplyScalar(1 / RecastConfig.RATIO);
+          out = this.navigationPlugin.getClosestPoint(out);
+          console.log("goto", out);
+          this.crowd.agentGoto(index, out);
+        };
+
+        _proto.agentTeleportByIndex = function agentTeleportByIndex(index, position) {
+          var out = position.multiplyScalar(1 / RecastConfig.RATIO);
+          out = this.navigationPlugin.getClosestPoint(out);
+          console.log("goto", out);
+          this.crowd.agentTeleport(index, out);
+        }
+        /**
+         * 添加角色
+         * @param startPos
+         */
+        ;
+
+        _proto.addAgents = function addAgents(startPos) {
           startPos.multiplyScalar(1 / RecastConfig.RATIO);
           this.navigationPlugin.getClosestPoint(startPos);
           var agentParams = {
-            radius: 0.5,
+            radius: 1,
             height: 2,
-            maxAcceleration: 20.0,
+            maxAcceleration: 1000.0,
             maxSpeed: 6.0,
-            collisionQueryRange: 0,
-            pathOptimizationRange: 0.0,
+            collisionQueryRange: 2,
+            pathOptimizationRange: 2 * 30,
             separationWeight: 1.0
           };
-          var agentIndex = this.crowd.addAgent(startPos, agentParams, node);
+          var agentIndex = this.crowd.addAgent(startPos, agentParams);
+          return agentIndex;
         }
         /**
          * 移除所有角色
@@ -485,9 +504,9 @@ System.register("chunks:///_virtual/RecastDetourManager.ts", ['cc', './recastJsP
         ;
 
         _proto.addRandomAgents = function addRandomAgents(node) {
-          var randomPos = this.navigationPlugin.getRandomPointAround(v3(0, 0, 0), 2);
+          var randomPos = this.navigationPlugin.getRandomPointAround(v3(0, 0, 0), 100);
           console.log(randomPos);
-          this.addAgents(randomPos, node);
+          return this.addAgents(randomPos);
         };
 
         _proto.update = function update(dt) {
@@ -507,7 +526,7 @@ System.register("chunks:///_virtual/RecastDetourManager.ts", ['cc', './recastJsP
 System.register("chunks:///_virtual/test.ts", ['cc', './recastJsPlugin.js', './RecastDetourManager.ts'], function (exports) {
   'use strict';
 
-  var cclegacy, _decorator, Node, Camera, Material, macro, resources, Asset, MeshRenderer, geometry, v3, instantiate, math, Vec3, Component, systemEvent, SystemEventType, NodePool, RecastJSPlugin, RecastDetourManager;
+  var cclegacy, _decorator, Node, Camera, Material, v3, macro, resources, Asset, MeshRenderer, geometry, RenderableComponent, instantiate, math, Vec3, Component, systemEvent, SystemEventType, NodePool, RecastJSPlugin, RecastDetourManager;
 
   return {
     setters: [function (module) {
@@ -516,12 +535,13 @@ System.register("chunks:///_virtual/test.ts", ['cc', './recastJsPlugin.js', './R
       Node = module.Node;
       Camera = module.Camera;
       Material = module.Material;
+      v3 = module.v3;
       macro = module.macro;
       resources = module.resources;
       Asset = module.Asset;
       MeshRenderer = module.MeshRenderer;
       geometry = module.geometry;
-      v3 = module.v3;
+      RenderableComponent = module.RenderableComponent;
       instantiate = module.instantiate;
       math = module.math;
       Vec3 = module.Vec3;
@@ -677,6 +697,8 @@ System.register("chunks:///_virtual/test.ts", ['cc', './recastJsPlugin.js', './R
 
           _defineProperty(_assertThisInitialized(_this), "startLinkPos", void 0);
 
+          _defineProperty(_assertThisInitialized(_this), "boss", 0);
+
           return _this;
         }
 
@@ -723,6 +745,10 @@ System.register("chunks:///_virtual/test.ts", ['cc', './recastJsPlugin.js', './R
 
           return start;
         }();
+
+        _proto.getRandomPos = function getRandomPos() {
+          return v3((Math.random() - 0.5) * 100, 2, (Math.random() - 0.5) * 100).add(this.node.getWorldPosition());
+        };
 
         _proto.onKeyDown = function onKeyDown(event) {
           switch (event.keyCode) {
@@ -783,6 +809,8 @@ System.register("chunks:///_virtual/test.ts", ['cc', './recastJsPlugin.js', './R
         };
 
         _proto.onTouch = function onTouch(touch) {
+          var _this3 = this;
+
           if (this.moveDis > 50) {
             this.moveDis = 0;
             return;
@@ -813,7 +841,13 @@ System.register("chunks:///_virtual/test.ts", ['cc', './recastJsPlugin.js', './R
 
           switch (this.type) {
             case 1:
-              this.recastDetourManager.addAgents(out, this.get(this.pool, this.roleNode));
+              var id = this.recastDetourManager.addAgents(out);
+              var role = this.get(this.pool, this.roleNode);
+              var comp = role.getComponent(RenderableComponent);
+              comp.unscheduleAllCallbacks();
+              comp.schedule(function () {
+                role.setWorldPosition(_this3.recastDetourManager.crowd.getAgentPosition(id));
+              });
               break;
 
             case 2:
