@@ -159,6 +159,7 @@ export class Test extends Component {
                     this.startLinkPos = out;
                     break;
                 }
+                this.roleNodeRoot.removeAllChildren();
                 this.recastDetourManager.addLink(this.startLinkPos,out);
                 this.startLinkPos = undefined;
                 break;

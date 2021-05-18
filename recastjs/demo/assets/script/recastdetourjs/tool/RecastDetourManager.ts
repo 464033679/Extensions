@@ -121,17 +121,17 @@ export default class RecastDetourManager{
             ch: 0.2,
             walkableSlopeAngle: 45,
             walkableHeight:15,
-            walkableClimb: 0.1,
-            walkableRadius: 1.0,
+            walkableClimb: 2.0,
+            walkableRadius: 0.6,
             maxEdgeLen: 12.,
-            maxSimplificationError: 0.1,
+            maxSimplificationError: 0.5,
             minRegionArea: 8,
             mergeRegionArea: 20,
             maxVertsPerPoly: 3,
             detailSampleDist: 6,
-            detailSampleMaxError: 0.1,
+            detailSampleMaxError: 1,
             offMeshLinkConfig : instance.linkList,
-            tileSize : 0
+            tileSize : 16
         };
         instance.config = navmeshParameters;
         instance.meshes = comps;
@@ -175,7 +175,7 @@ export default class RecastDetourManager{
             this.removeAllAgents();
         }
         let scene = cc.director.getScene()!;
-        let crowd = this.navigationPlugin.createCrowd(100, 5, scene);
+        let crowd = this.navigationPlugin.createCrowd(100, 1, scene);
         this.crowd = crowd as RecastJSCrowd;
         this.updateNavMeshDebug();
     }
@@ -232,7 +232,7 @@ export default class RecastDetourManager{
         let agentParams = {
             radius: 1,
             height: 2,
-            maxAcceleration: 1000.0,
+            maxAcceleration: 20.0,
             maxSpeed: 6.0,
             collisionQueryRange: 2,
             pathOptimizationRange: 2 * 30,
@@ -246,7 +246,7 @@ export default class RecastDetourManager{
      */
     removeAllAgents(){
         while (this.crowd!.agents.length){
-            this.crowd!.removeAgent(0);
+            this.crowd!.removeAgent(this.crowd!.agents[0]);
         }
     }
 

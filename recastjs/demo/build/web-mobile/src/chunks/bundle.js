@@ -50110,7 +50110,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                 break a;
                               }
 
-                              if ((f | 0) < (l | 0) || (f | 0) > (h | 0)) {
+                              if ((f | 0)(h | 0)) {
                                 break d;
                               }
 
@@ -50146,7 +50146,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                 break a;
                               }
 
-                              if ((g | 0) < (l | 0) || (g | 0) > (h | 0)) {
+                              if ((g | 0)(h | 0)) {
                                 break e;
                               }
 
@@ -50183,7 +50183,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                 break a;
                               }
 
-                              if ((f | 0) < (h | 0) || (g | 0) > (h | 0)) {
+                              if ((f | 0)(h | 0)) {
                                 break f;
                               }
 
@@ -50216,7 +50216,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                               break a;
                             }
 
-                            if ((f | 0) < (l | 0) || (g | 0) > (l | 0)) {
+                            if ((f | 0)(l | 0)) {
                               break c;
                             }
 
@@ -54176,7 +54176,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                   break a;
                                 }
 
-                                if ((f | 0) < (j | 0) || (f | 0) > (i | 0)) {
+                                if ((f | 0)(i | 0)) {
                                   break c;
                                 }
 
@@ -54212,7 +54212,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                   break a;
                                 }
 
-                                if ((g | 0) < (j | 0) || (g | 0) > (i | 0)) {
+                                if ((g | 0)(i | 0)) {
                                   break d;
                                 }
 
@@ -54249,7 +54249,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                   break a;
                                 }
 
-                                if ((f | 0) < (i | 0) || (g | 0) > (i | 0)) {
+                                if ((f | 0)(i | 0)) {
                                   break e;
                                 }
 
@@ -54282,7 +54282,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                                 break a;
                               }
 
-                              if ((f | 0) < (j | 0) || (g | 0) > (j | 0)) {
+                              if ((f | 0)(j | 0)) {
                                 break b;
                               }
 
@@ -59585,7 +59585,7 @@ System.register("chunks:///_virtual/recast.js", [], function (exports) {
                             k = e + j | 0;
                             l = r[k + q[a + 8 >> 2] | 0];
 
-                            if (!((l | 0) < (t | 0) || (l | 0) > (s | 0))) {
+                            if (!(l | 0)(s | 0)) {
                               o[k + q[a + 12 >> 2] | 0] = 0;
                             }
 

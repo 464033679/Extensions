@@ -41,31 +41,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51992f7a-4fb3-4b88-8ad6-106573717cbe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/resources/default-material.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../npm/recast/dist/test.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../npm/recast/dist/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/resources/nav_test.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/resources/default-material.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/assets/resources/default-material.mtl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scene.scene" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scene.scene" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/script/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/script/test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/.internal-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/.internal-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/05/05e79121-8675-4551-9ad7-1b901a4025db.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/05/05e79121-8675-4551-9ad7-1b901a4025db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/0d/0d9353c4-6fb9-49bb-bc62-77f1750078c2.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/0d/0d9353c4-6fb9-49bb-bc62-77f1750078c2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/0e/0e89afe7-56de-4f99-96a1-cba8a75bedd2.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/0e/0e89afe7-56de-4f99-96a1-cba8a75bedd2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/1c/1c02ae6f-4492-4915-b8f8-7492a3b1e4cd.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/1c/1c02ae6f-4492-4915-b8f8-7492a3b1e4cd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/20/20a5d8cb-ccad-4543-a937-fccd98c9f3de.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/20/20a5d8cb-ccad-4543-a937-fccd98c9f3de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/2a/2af73429-41d1-4346-9062-7798e42945dd.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/2a/2af73429-41d1-4346-9062-7798e42945dd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/2b/2bd7e5b6-cd8c-41a1-8136-ddb8efbf6326.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/2b/2bd7e5b6-cd8c-41a1-8136-ddb8efbf6326.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/2b/2be36297-9abb-4fee-8049-9ed5e271da8a.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/2b/2be36297-9abb-4fee-8049-9ed5e271da8a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/30/30da77a1-f02d-4ede-aa56-403452ee7fde.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/30/30da77a1-f02d-4ede-aa56-403452ee7fde.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/31/3139fa4f-8c42-4ce6-98be-15e848d9734c.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/31/3139fa4f-8c42-4ce6-98be-15e848d9734c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/34/34a07346-9f62-4a84-90ae-cb83f7a426c1.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/34/34a07346-9f62-4a84-90ae-cb83f7a426c1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/36/36008810-7ad3-47c0-8112-e30aee089e45.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/36/36008810-7ad3-47c0-8112-e30aee089e45.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/36/36ed4422-3542-4cc4-bf02-dc4bfc590836.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/36/36ed4422-3542-4cc4-bf02-dc4bfc590836.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/40/40563723-f8fc-4216-99ea-a81636435c10.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/40/40563723-f8fc-4216-99ea-a81636435c10.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/41/4182ee46-ffa0-4de2-b66b-c93cc6c7e9b8.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/41/4182ee46-ffa0-4de2-b66b-c93cc6c7e9b8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/63/6350d660-e888-4acf-a552-f3b719ae9110.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/63/6350d660-e888-4acf-a552-f3b719ae9110.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/65/655c9519-1a37-472b-bae6-29fefac0b550.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/65/655c9519-1a37-472b-bae6-29fefac0b550.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/71/711ebe11-f673-4cd9-9a83-63c60ba54c5b.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/71/711ebe11-f673-4cd9-9a83-63c60ba54c5b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/73/73ce1f7f-d1f4-4942-ad93-66ca3b3041ab.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/73/73ce1f7f-d1f4-4942-ad93-66ca3b3041ab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/7a/7a49aa24-bd7a-40a8-b31a-b2a9da85abcd.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/7a/7a49aa24-bd7a-40a8-b31a-b2a9da85abcd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/7e/7e089eaf-fa97-40d7-8a20-741a152585df.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/7e/7e089eaf-fa97-40d7-8a20-741a152585df.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/7f/7fa63aed-f3e2-46a5-8a7c-c1a1adf6cea6.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/7f/7fa63aed-f3e2-46a5-8a7c-c1a1adf6cea6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/81/810e96e4-e456-4468-9b59-f4e8f39732c0.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/81/810e96e4-e456-4468-9b59-f4e8f39732c0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/90/90bdd2a9-2838-4888-b66c-e94c8b7a5169.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/90/90bdd2a9-2838-4888-b66c-e94c8b7a5169.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/90/90e8b0d4-12dc-412d-9156-ea1fdb18c15b.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/90/90e8b0d4-12dc-412d-9156-ea1fdb18c15b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/9c/9c541fa2-1dc8-4d8b-813a-aec89133f5b1.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/9c/9c541fa2-1dc8-4d8b-813a-aec89133f5b1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/9d/9db8cd0b-cbe4-42e7-96a9-a239620c0a9d.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/9d/9db8cd0b-cbe4-42e7-96a9-a239620c0a9d.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/a0/a0e9756d-9128-4f49-8097-e041c8b733b8.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/a0/a0e9756d-9128-4f49-8097-e041c8b733b8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/a9/a9ef7dfc-ea8b-4cf8-918e-36da948c4de0.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/a9/a9ef7dfc-ea8b-4cf8-918e-36da948c4de0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/ab/ab3e16f9-671e-48a7-90b7-d0884d9cbb85.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/ab/ab3e16f9-671e-48a7-90b7-d0884d9cbb85.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/bb/bb0a6472-cd67-4afb-a031-94fca8f4cc92.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/bb/bb0a6472-cd67-4afb-a031-94fca8f4cc92.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/c1/c1baa707-78d6-4b89-8d5d-0b7fdf0c39bc.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/c1/c1baa707-78d6-4b89-8d5d-0b7fdf0c39bc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/c9/c96e159e-43ea-4a16-8279-05bc39119d1a.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/c9/c96e159e-43ea-4a16-8279-05bc39119d1a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/d4/d47f5d5e-c931-4ff4-987b-cc818a728b82.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/d4/d47f5d5e-c931-4ff4-987b-cc818a728b82.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/e5/e5f21aad-3a69-4011-ac62-b74352ac025e.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/e5/e5f21aad-3a69-4011-ac62-b74352ac025e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/f0/f09a0597-10e6-49e5-8759-a148b5e85395.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/f0/f09a0597-10e6-49e5-8759-a148b5e85395.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/f3/f396261e-3e06-41ec-bdd6-9a8b6d99026f.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/f3/f396261e-3e06-41ec-bdd6-9a8b6d99026f.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/f7/f773db21-62b8-4540-956a-29bacf5ddbf5.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/f7/f773db21-62b8-4540-956a-29bacf5ddbf5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/fc/fc6bfcfa-8086-4326-809b-0ba1226bac7d.json" beforeDir="false" afterPath="$PROJECT_DIR$/library/fc/fc6bfcfa-8086-4326-809b-0ba1226bac7d.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/logs/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/local/logs/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profiles/v2/packages/scene.json" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/v2/packages/scene.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/INavigationEngine.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/INavigationEngine.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/dist/INavigationEngine.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/dist/INavigationEngine.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/dist/recast.js" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/dist/recast.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/dist/recastJsPlugin.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/dist/recastJsPlugin.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/dist/recastJsPlugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/dist/recastJsPlugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../npm/recast/recastJsPlugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../npm/recast/recastJsPlugin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../recast.idl" beforeDir="false" afterPath="$PROJECT_DIR$/../recast.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/v2/packages/engine.json" beforeDir="false" afterPath="$PROJECT_DIR$/settings/v2/packages/engine.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../recastnavigation" beforeDir="false" afterPath="$PROJECT_DIR$/../recastnavigation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/recastjs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../src/recastjs.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/recastjs.h" beforeDir="false" afterPath="$PROJECT_DIR$/../src/recastjs.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,11 +103,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/script/test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+            <state>
+              <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
               <folding>
                 <element signature="e#59#84#0" expanded="true" />
               </folding>
@@ -94,17 +118,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/dist/recastJsPlugin.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="243" column="4" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+            <state relative-caret-position="290">
+              <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="243" column="7" lean-forward="true" selection-start-line="243" selection-start-column="7" selection-end-line="243" selection-end-column="7" />
+              <folding>
+                <element signature="e#74#99#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts">
+        <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/INavigationEngine.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
+            <state relative-caret-position="-2925" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/recastJsPlugin.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="127" column="9" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#119#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/dist/recast.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="18" column="157465" selection-start-line="18" selection-start-column="157465" selection-end-line="18" selection-end-column="157465" />
             </state>
           </provider>
         </entry>
@@ -121,8 +176,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cc.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147525">
-              <caret line="5901" column="9" selection-start-line="5901" selection-start-column="9" selection-end-line="5901" selection-end-column="9" />
+            <state relative-caret-position="822">
+              <caret line="17879" column="8" selection-start-line="17879" selection-start-column="8" selection-end-line="17879" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -162,8 +217,6 @@
       <find>agentGoto</find>
       <find>getRandomPointAround</find>
       <find>getW</find>
-      <find>removeAllAgents</find>
-      <find>build</find>
       <find>remove</find>
       <find>agent</find>
       <find>agentT</find>
@@ -171,6 +224,11 @@
       <find>\(.\|.\)&lt;\(.\|.\)\|\(.\|.\)&gt;\(.\|.\)</find>
       <find>(\(.\|.\)&lt;\(.\|.\))\|(\(.\|.\)&gt;\(.\|.\))</find>
       <find>CC_EDITOR</find>
+      <find>removeA</find>
+      <find>build</find>
+      <find>\(.\|.&lt;.\|</find>
+      <find>removeAllAgents</find>
+      <find>createC</find>
     </findStrings>
     <replaceStrings>
       <replace>cc.Scene</replace>
@@ -188,14 +246,14 @@
         <option value="$PROJECT_DIR$/../npm/recast/test.ts" />
         <option value="$PROJECT_DIR$/../npm/recast/tsconfig.json" />
         <option value="D:/mygame/hitMonster/build/jsb-link/frameworks/runtime-src/proj.android-studio/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/node_modules/cocos-recast/dist/recast.js" />
         <option value="$PROJECT_DIR$/node_modules/cocos-recast/recastJsPlugin.ts" />
         <option value="$PROJECT_DIR$/../npm/recast/recastJsPlugin.ts" />
         <option value="$PROJECT_DIR$/../npm/recast/INavigationEngine.ts" />
         <option value="$PROJECT_DIR$/../npm/recast/dist/recast.js" />
         <option value="$PROJECT_DIR$/../npm/recast/package.json" />
-        <option value="$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts" />
+        <option value="$PROJECT_DIR$/node_modules/cocos-recast/dist/recast.js" />
         <option value="$PROJECT_DIR$/assets/script/test.ts" />
+        <option value="$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts" />
       </list>
     </option>
   </component>
@@ -221,6 +279,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,12 +299,28 @@
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos-recast" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos-recast" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -305,18 +381,19 @@
       <workItem from="1620701793440" duration="11000" />
       <workItem from="1620706338588" duration="3876000" />
       <workItem from="1620725396523" duration="854000" />
-      <workItem from="1620900738038" duration="776000" />
+      <workItem from="1620900738038" duration="1660000" />
+      <workItem from="1621312159073" duration="3641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20412000" />
+    <option name="totallyTimeSpent" value="24937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2835821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -448,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/dist/recast.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23225">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp/tsconfig.cocos.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -474,16 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/recastJsPlugin.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="679" column="78" selection-start-line="687" selection-start-column="4" selection-end-line="693" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#119#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -525,30 +585,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/script/Fight/People.ts" />
+    <entry file="file://$PROJECT_DIR$/assets/script/Fight/AiComp.ts" />
+    <entry file="file://$PROJECT_DIR$/assets/script/Fight/Player.ts" />
+    <entry file="file://$PROJECT_DIR$/assets/script/Fight/data/GameConfig.ts" />
     <entry file="file://$PROJECT_DIR$/../npm/recast/dist/recast.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22775">
           <caret line="44" column="96507" selection-start-line="44" selection-start-column="96507" selection-end-line="44" selection-end-column="96507" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/script/Fight/People.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/script/Fight/AiComp.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="e#70#115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cc.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147525">
-          <caret line="5901" column="9" selection-start-line="5901" selection-start-column="9" selection-end-line="5901" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -566,36 +610,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/script/Fight/Player.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/INavigationEngine.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="-2925" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/recastJsPlugin.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="127" column="9" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#119#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/script/Fight/data/GameConfig.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/dist/recast.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
+        <state relative-caret-position="261">
+          <caret line="18" column="157465" selection-start-line="18" selection-start-column="157465" selection-end-line="18" selection-end-column="157465" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/dist/recastJsPlugin.d.ts">
+    <entry file="file://$PROJECT_DIR$/cc.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="243" column="4" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+        <state relative-caret-position="822">
+          <caret line="17879" column="8" selection-start-line="17879" selection-start-column="8" selection-end-line="17879" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/script/test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+        <state>
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
           <folding>
             <element signature="e#59#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cocos-recast/dist/recastJsPlugin.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/script/recastdetourjs/tool/RecastDetourManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="243" column="7" lean-forward="true" selection-start-line="243" selection-start-column="7" selection-end-line="243" selection-end-column="7" />
+          <folding>
+            <element signature="e#74#99#0" expanded="true" />
           </folding>
         </state>
       </provider>
